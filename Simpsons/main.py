@@ -28,21 +28,21 @@ character_s: str= data[0]['character']
 # Let's say we want to retrieve quotes from Lisa Simpson, we will make an IF statement that if character_s is equal to Lisa Simpson to add in the dictionary as csv file
 if character_s == 'Lisa Simpson':
     dic_ = {'Quote': quote_s, 'Character': character_s}
-    with open('/Users/bess.hamud/Documentos/Self_Study/Data_Analysis/Simpsons/Lisa/Lisa.csv', 'a') as csvfile:
+    with open('/Lisa/Lisa.csv', 'a') as csvfile:
       w = csv.DictWriter(csvfile, dic_.keys())
       w.writerow(dic_)
 
 # Lets do it for another Simpson as well
 elif character_s == 'Homer Simpson':
     dic_ = {'Quote': quote_s, 'Character': character_s}
-    with open('/Users/bess.hamud/Documentos/Self_Study/Data_Analysis/Simpsons/Homer/Homer.csv', 'a') as csvfile:
+    with open('/Homer/Homer.csv', 'a') as csvfile:
       w = csv.DictWriter(csvfile, dic_.keys())
 
       w.writerow(dic_)
 
 else:
     dic_ = {'Quote': quote_s, 'Character': character_s}
-    with open('/Users/bess.hamud/Documentos/Self_Study/Data_Analysis/Simpsons/General/General.csv', 'a') as csvfile:
+    with open('/General/General.csv', 'a') as csvfile:
       w = csv.DictWriter(csvfile, dic_.keys())
       w.writerow(dic_)
 
