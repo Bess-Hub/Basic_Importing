@@ -18,7 +18,7 @@ response_info = json.loads(response)
 list = response_info["@graph"]
 
 # Using pandas module create the dataframe
-df = pd.DataFrame(data=list, columns=['title','event-location', 'dtstart'])
+df = pd.DataFrame(data=list, columns=['title','description','event-location', 'dtstart'])
 # Since it is a very long list we will filter just 10 events out of it
 df_filtered=df. head(10)
 
@@ -31,7 +31,7 @@ run = str(input("Do you want to check the upcoming activities? (Y/N) "))
 
 # Create the IF / ELIF and ELSE
 if run in ("Y", "y", "yes", "YES"):
-    print(tabulate(df_filtered, showindex=True, tablefmt="double_grid", maxcolwidths=[20,20,9], headers=['Title','Location','When']))
+    print(tabulate(df_filtered, showindex=True, tablefmt="double_grid", maxcolwidths=[20,20,20,9], headers=['Title','Details','Location','When']))
 
 elif run in ("N", "n", "no", "NO"):
     print()
